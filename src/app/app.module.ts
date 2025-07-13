@@ -3,14 +3,23 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArtListComponent } from './art-list/art-list.component';
+
+import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArtListComponent,
+    CartComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     provideClientHydration(withEventReplay())
