@@ -47,15 +47,4 @@ export class ArtListComponent {
   },
   ]
 
-  upQuantity(article: Article) : void{
-    if(article.quantity < article.stock){
-      article.quantity++;
-    }
-  }
-  
-  downQuantity(article: Article) : void{
-    if(article.quantity > 0){
-      article.quantity--;
-    }
-  }
 }

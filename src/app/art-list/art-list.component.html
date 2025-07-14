@@ -18,17 +18,11 @@
             <td>{{article.price | currency}} </td>
             <td>{{article.type}}</td>
             @if(article.stock > 0){
-                <td>{{article.stock}}</td>
-                <td>
-                    <button class="btn btn-primary btn-sm" (click)="downQuantity(article)">-</button>
-                    {{article.quantity}}
-                    <button class="btn btn-primary btn-sm" (click)="upQuantity(article)">+</button>
-                </td>
+                <td><app-input-integer  [(quantity)] = "article.quantity" [max] = "article.stock"></app-input-integer></td>
             }
             @else {
                 <td><span>SIN STOCK</span></td>
             }
-        
         </tr>
     }
     @empty {

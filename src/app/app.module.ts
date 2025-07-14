@@ -8,6 +8,7 @@ import { ArtListComponent } from './art-list/art-list.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './menu/menu.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
     ArtListComponent,
     CartComponent,
     MenuComponent,
+    InputIntegerComponent,
   ],
   imports: [
     BrowserModule,
