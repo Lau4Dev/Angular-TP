@@ -7,18 +7,21 @@
             <th>Precio</th>
             <th>Tipo</th>
             <th>Stock</th>
+            <th>Cantidad</th>
+            <th>Comprar</th>
         </tr>
     </thead>
     <tbody>
-    @for (article of articles; track article.name) {
-      
+    @for (article of articles; track article.name) {   
         <tr [ngClass]="{'clearance' : article.clearance}">
             <td><img width="90" [src]="article.image" [alt]="article.name"></td>
             <td>{{article.name}}</td>
             <td>{{article.price | currency}} </td>
             <td>{{article.type}}</td>
             @if(article.stock > 0){
+                <td>{{article.stock}}</td>
                 <td><app-input-integer  [(quantity)] = "article.quantity" [max] = "article.stock"></app-input-integer></td>
+                <td><button class="btn btn-primary" (click)="addToCart(article)">Comprar</button></td>
             }
             @else {
                 <td><span>SIN STOCK</span></td>
