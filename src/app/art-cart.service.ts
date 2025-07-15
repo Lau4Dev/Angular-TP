@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Article } from './art-list/Article';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ArtCartService {
-  cartList: Article[] = [];
+  private cartList: Article[] = [];
+
+  cartList2: BehaviorSubject<Article[]> = new BehaviorSubject<Article[]>([]);
   constructor() { }
 
   addToCart(article: Article): void{
@@ -17,6 +20,6 @@ export class ArtCartService {
     else{
       item.quantity += article.quantity;
     }
-    console.log(this.cartList);
+    this.cartList2.next(this.cartList);
   }
 }
